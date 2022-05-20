@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.4](https://github.com/shakedlokits/obsidian-bellboy/compare/1.0.3...1.0.4) (2022-05-20)
+
+
+### Bug Fixes
+
+* github workflow. ([bd36baa](https://github.com/shakedlokits/obsidian-bellboy/commit/bd36baacd07062b077940b5fc1b46e3daecce2d5))
+
 ### [1.0.3](https://github.com/shakedlokits/obsidian-bellboy/compare/1.0.2...1.0.3) (2022-05-20)
 
 
