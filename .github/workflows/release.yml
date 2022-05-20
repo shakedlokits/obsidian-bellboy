@@ -18,9 +18,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14.x"
-      - name: Get latest release version number
-        id: get_version
-        uses: battila7/get-version-action@v2
+
       - name: Build
         id: build
         run: |
@@ -37,10 +35,10 @@ jobs:
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: ${{ steps.get_version.outputs.version-without-v }}
+          VERSION: ${{ github.ref }}
         with:
-          tag_name: ${{ steps.get_version.outputs.version-without-v }}
-          release_name: ${{ steps.get_version.outputs.version-without-v }}
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
           draft: false
           prerelease: false
 
