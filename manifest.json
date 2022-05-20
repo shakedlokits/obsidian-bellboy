@@ -1,7 +1,7 @@
 {
 	"id": "obsidian-bellboy",
 	"name": "Bellboy",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"minAppVersion": "1.0.0",
 	"description": "Opinionated file structure manager.",
 	"author": "Shaked Lokits (shaked@melio.com)",
