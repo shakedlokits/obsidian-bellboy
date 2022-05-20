@@ -1,6 +1,6 @@
 {
 	"name": "obsidian-bellboy",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Opinionated file structure manager",
 	"main": "main.js",
 	"scripts": {
