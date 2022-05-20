@@ -1,12 +1,16 @@
 {
-	"name": "obsidian-sample-plugin",
+	"name": "obsidian-bellboy",
 	"version": "1.0.0",
 	"description": "Opinionated file structure manager",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
 		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"release": "standard-version",
 		"version": "node version-bump.mjs && git add manifest.json versions.json"
+	},
+	"standard-version": {
+		"t": ""
 	},
 	"keywords": [
 		"obsidian",
@@ -23,6 +27,7 @@
 		"builtin-modules": "^3.2.0",
 		"esbuild": "0.13.12",
 		"obsidian": "latest",
+		"standard-version": "^9.5.0",
 		"tslib": "2.3.1",
 		"typescript": "4.4.4"
 	},
