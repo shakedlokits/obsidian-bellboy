@@ -17,7 +17,7 @@
 		"plugin",
 		"file-structure-manager"
 	],
-	"author": "Shaked Lokits (shaked@melio.com)",
+	"author": "Shaked Lokits",
 	"license": "MIT",
 	"devDependencies": {
 		"@types/lodash": "^4.14.182",
