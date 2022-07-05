@@ -1,22 +1,24 @@
-import { CachedMetadata, Plugin, TFile } from 'obsidian';
-import kebabCase from 'lodash/kebabCase';
-import trim from 'lodash/trim';
+import { organizeFileStructure, stashAttachments } from './src/organize-file-structure';
+import { BellboySettings, loadSettings, SettingsTab } from './src/settings';
+import { Plugin } from 'obsidian';
+import { updateFileName } from 'src/update-file-name';
 
 export default class Bellboy extends Plugin {
-	async updateFileName(file: TFile, data: string, cache: CachedMetadata) {
-		const [{ heading: title }] = cache?.headings ?? [{ heading: file.basename }];
-		const { icon } = cache?.frontmatter;
-
-		const fileName = `${kebabCase(title)}${icon ? '-' + trim(icon) : ''}.md`;
-		if (file.basename !== fileName) {
-			await this.app.fileManager.renameFile(file, fileName);
-		}
-	}
+	settings: BellboySettings;
 
 	async onload() {
+		await loadSettings(this);
+		this.addSettingTab(new SettingsTab(this.app, this));
+
 		this.registerEvent(
 			this.app.metadataCache.on('changed', async (file, data, cache) => {
-				await this.updateFileName(file, data, cache);
+				await updateFileName({ plugin: this, file, cache });
+				await organizeFileStructure({ plugin: this, file, cache });
+			})
+		);
+		this.registerEvent(
+			this.app.vault.on('create', async (file) => {
+				await stashAttachments({ plugin: this, file });
 			})
 		);
 	}
