@@ -12,7 +12,7 @@ Bellboy looks up for the first header in you file, converts it to `kebab-case` a
 
 In addition, if an `icon` frontmatter is added, this icon would be added to the name as well, so you could find your files more easily.
 
-![Renamer](docs/example.jpg)
+![Renamer](https://raw.githubusercontent.com/shakedlokits/obsidian-bellboy/master/docs/example.jpg)
 
 #### *But Why?*
 Wishing to maintain a file system agnostic naming scheme for files, I chose to use `kebab-case` as our main naming convention style.   
