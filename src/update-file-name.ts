@@ -15,7 +15,7 @@ export const updateFileName = async ({
 	if (isExcluded) return;
 
 	const [{ heading: title }] = cache?.headings ?? [{ heading: file.basename }];
-	const { icon } = cache?.frontmatter;
+	const icon = cache?.frontmatter.icon;
 
 	const fileName = `${kebabCase(title)}${icon ? '-' + trim(icon) : ''}.md`;
 	if (file.basename !== fileName && plugin.settings.shouldUpdateFileNames) {
